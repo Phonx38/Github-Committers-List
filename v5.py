@@ -105,10 +105,11 @@ class GithubAnalysis:
 
         result = {}
         vals = list(final_dic.values())
-
+        # preparing data before converting to excel sheet 
         for val in vals:
             for repo, users in val.items():
                 temp = [user for user in users if user in usernames]
+                # list of users for each repo is converted into a string of comma seperated value
                 result[repo] = ",".join(temp)
         df = pd.DataFrame(data=result, index=[0])
 
