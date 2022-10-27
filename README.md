@@ -3,8 +3,8 @@
 
 ### Steps Followed ###
 
-* First, We call *getUsernames()* function, which parses the given links from excel sheet and converts
-data into list of github usernames to be used by *getRepos*  function
+* First, We call **getUsernames()** function, which parses the given links from excel sheet and converts
+data into list of github usernames to be used by **getRepos**  function
 
 * Then, **getRepos()** function, fetches the repos of a user from github and save it in a list
 
