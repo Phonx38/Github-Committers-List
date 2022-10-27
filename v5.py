@@ -46,7 +46,7 @@ class GithubAnalysis:
 
             response = await session.get(url, headers=self.HEADERS, ssl=False)
             response.raise_for_status()
-            if response.status != 204:
+            if response.status != 204: #because some repos do not exist or can be private in github
                 result = await response.json()
 
             for d in result:
@@ -97,7 +97,7 @@ class GithubAnalysis:
             try:
                 repos = await self.getRepos(username)
                 contributors = await self.getContributors(repos, username)
-            except aiohttp.client_exceptions.ClientResponseError as e:
+            except aiohttp.client_exceptions.ClientResponseError as e: #because some usernames do not exist in github
                 print(e)
                 continue
 
